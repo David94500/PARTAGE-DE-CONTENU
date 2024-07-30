@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage de Contenu</title>
+</head>
+<body>
+    <h1>Partage de Contenu</h1>
+    
+    <button onclick="shareOnFacebook()">Partager sur Facebook</button>
+    <button onclick="shareOnTwitter()">Partager sur Twitter</button>
+    <button onclick="shareOnLinkedIn()">Partager sur LinkedIn</button>
+
+    <script>
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent("Venez voir ce contenu intéressant !");
+
+        function shareOnFacebook() {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+        }
+    </script>
+</body>
+</html>
